@@ -79,12 +79,15 @@ app.delete('/api/testimonials/:_id', (req, res) => {
 
 // FOR CLASSES
 
-
 app.post('/api/classes', (req, res) => {
   const newClass = req.body;
+  newClass.reviews = JSON.stringify(newClass.reviews);
+
   const sql = 'INSERT INTO yoga_classes SET ?';
 
   db.query(sql, newClass, (err, result) => {
+    // console.log("err",err);
+    // console.log("result",result);
     if (err) {
       console.error('Error creating yoga class:', err);
       res.status(500).json({ error: 'Error creating yoga class' });
@@ -93,6 +96,7 @@ app.post('/api/classes', (req, res) => {
     }
   });
 });
+
 
 
 app.get('/api/classes', (req, res) => {
