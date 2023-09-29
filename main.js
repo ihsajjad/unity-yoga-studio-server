@@ -78,12 +78,7 @@ app.delete('/api/testimonials/:_id', (req, res) => {
 
 
 // FOR CLASSES
-try {
-  const jsonData = JSON.parse(yourJsonString); // Replace with your JSON string
-  // Your code to handle the parsed JSON data
-} catch (error) {
-  console.error('Invalid JSON:', error);
-}
+
 
 app.post('/api/classes', (req, res) => {
   const newClass = req.body;
