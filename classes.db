@@ -19,9 +19,6 @@ CREATE TABLE yoga_classes (
   reviews JSON,
   url VARCHAR(255) UNIQUE
 );
-
-show databases;
-
 use pro;
 
-select * from yoga_classes;
+
