@@ -1,0 +1,2 @@
+use yoga;
+create table instructors(id INT AUTO_INCREMENT PRIMARY KEY, name varchar(100) not null, specialization text not null, bio text not null, email varchar(255), phone int, website varchar(255) unique, image varchar(255), reviews json, video_intro varchar(255), teaching_philosophy varchar(255),upcoming_events json,social_media json);

@@ -1,0 +1,3 @@
+use yoga;
+
+create table blogs(id INT AUTO_INCREMENT PRIMARY KEY,title varchar(255) not null, discription text,date datetime,image varchar(255));
