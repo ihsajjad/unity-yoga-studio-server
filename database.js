@@ -1,14 +1,13 @@
 const mysql = require('mysql2')
-const connection = mysql.createConnection({
-    host:'localhost',
-    database:'yoga',
-    user:'root',
-    password:'root'
-    
-   
-   
 
-});
+
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "yoga",
+    
+  });
 
 connection.connect(function(error){
     if(error){
@@ -20,5 +19,6 @@ connection.connect(function(error){
     }
     
 });
+
 
 module.exports = connection;
