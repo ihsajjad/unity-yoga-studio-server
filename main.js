@@ -2,16 +2,23 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 6000;
+const cors = require('cors');
 
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'medhini',
-  database: 'pro',
+  host:"bpg24venmviqi1adrery-mysql.services.clever-cloud.com",
+  user:"uoapiuydgtagtu2q",
+  password:"LWKKCWTmX6a3F6p47ubs",
+  database:"bpg24venmviqi1adrery"
 });
+
+app.listen(6000, () => {
+  console.log("Server is running....")
+})
 
 db.connect((err) => {
   if (err) {
@@ -250,6 +257,3 @@ db.query(sql, [req.userId], (err, result) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
